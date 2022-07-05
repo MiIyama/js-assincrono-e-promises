@@ -1,6 +1,5 @@
-fetch("https://api.github.com/users/maykbrito")
-  .then((response) => response.json())
-  .then((data) => fetch(data.repos_url))
-  .then((res) => res.json())
-  .then((d) => console.log(d))
-  .catch((err) => console.log(err));
+import axios from "axios";
+axios.get('https://api.github.com/users/maykbrito')
+  .then(res => {
+    console.log(res.data);
+  });
