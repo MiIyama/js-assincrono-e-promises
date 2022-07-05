@@ -1,10 +1,8 @@
-import "./styles.css";
-
-document.getElementById("app").innerHTML = `
-<h1>Hello Vanilla!</h1>
-<div>
-  We use the same configuration as Parcel to bundle this sandbox, you can find more
-  info about Parcel 
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-</div>
-`;
+fetch('https://api.github.com/users/maykbrito')
+.then(response=>{
+  response.json()
+  .then(data=>{
+    fetch(data.repos_url)
+    .then(res=>res.json().then(d=>console.log(d)))
+})
+ })
